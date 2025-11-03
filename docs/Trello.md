@@ -1,4 +1,4 @@
-🔄 ✅ ❌ ⚠️ 🚫 🚧 
+🔄 ✅ ❌ ⚠️ 🚫 🚧
 
 ### Mini tickets:
 
@@ -6,15 +6,15 @@
 - ✅ Install Tailwind v3 -> `tailwindcss`, `postcss`, `autoprefixer`
 - ✅ Make Tailwind work -> added config, verified with blue banner
 - ✅ Change favicon -> replaced `public/favicon.svg`, cleared cache
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
+- ✅ Enable jsx-a11y rules in ESLint → flat config setup for accessibility linting
+- ✅ Add EditorConfig → consistent indentation and line endings across editors
+- ✅ Add Prettier configuration → auto-formatting and code style consistency
+- [x]
+- [x]
+- [x]
+- [x]
+- [x]
+- [x]
+- [x]
+- [x]
+- [x]
