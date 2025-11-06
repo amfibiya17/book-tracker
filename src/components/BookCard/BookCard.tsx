@@ -1,5 +1,5 @@
 function BookCard() {
-  return <div>BookCard</div>;
+  return <div className="flex flex-col border border-black">BookCard</div>;
 }
 
 export default BookCard;

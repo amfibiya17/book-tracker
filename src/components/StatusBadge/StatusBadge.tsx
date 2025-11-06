@@ -1,5 +1,5 @@
 function StatusBadge() {
-  return <div>StatusBadge</div>;
+  return <div className="flex flex-col border border-black">StatusBadge</div>;
 }
 
 export default StatusBadge;
