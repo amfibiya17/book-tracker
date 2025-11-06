@@ -10,7 +10,7 @@
 - ✅ Add EditorConfig → consistent indentation and line endings across editors
 - ✅ Add Prettier configuration → auto-formatting and code style consistency
 - ✅ Create [basic app structure](./ComponentStructure.md) → set up initial files and folders
-- [x]
+- ✅ Build app skeleton → responsive layout (borders only)
 - [x]
 - [x]
 - [x]
