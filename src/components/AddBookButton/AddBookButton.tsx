@@ -1,5 +1,7 @@
 function AddBookButton() {
-  return <div className="flex flex-col border border-black">AddBookButton</div>;
+  return (
+    <div className="m-1 flex flex-col border border-black">AddBookButton</div>
+  );
 }
 
 export default AddBookButton;

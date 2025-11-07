@@ -2,7 +2,9 @@ import { BookCard } from "../BookCard";
 
 function BookList() {
   return (
-    <div className="flex flex-col border border-black">
+    <div className="m-1 flex flex-col border border-black">
+      <BookCard />
+      <BookCard />
       <BookCard />
     </div>
   );
