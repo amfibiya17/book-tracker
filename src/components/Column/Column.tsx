@@ -1,10 +1,13 @@
-import { ColumnHeader } from "../ColumnHeader";
-import { ColumnBody } from "../ColumnBody";
+import ColumnHeader from "../ColumnHeader/ColumnHeader";
+import ColumnBody from "../ColumnBody/ColumnBody";
+import type { ColumnKey } from "../../config/columns";
 
-function Column() {
+type Props = { columnKey: ColumnKey };
+
+function Column({ columnKey }: Props) {
   return (
     <div className="flex flex-col border border-black">
-      <ColumnHeader />
+      <ColumnHeader columnKey={columnKey} />
       <ColumnBody />
     </div>
   );

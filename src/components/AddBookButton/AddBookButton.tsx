@@ -1,6 +1,6 @@
 function AddBookButton() {
   return (
-    <div className="m-1 flex flex-col border border-black">AddBookButton</div>
+    <button className="m-1 flex flex-col border border-black">AddBookButton</button>
   );
 }
 
