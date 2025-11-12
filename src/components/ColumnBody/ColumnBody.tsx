@@ -1,4 +1,4 @@
-import BookList from "../BookList/BookList";
+import { BookList } from "../BookList";
 
 function ColumnBody() {
   return (

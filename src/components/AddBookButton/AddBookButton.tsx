@@ -1,6 +1,10 @@
-function AddBookButton() {
+type Props = { onOpen: () => void };
+
+function AddBookButton({ onOpen }: Props) {
   return (
-    <button className="m-1 flex flex-col border border-black">AddBookButton</button>
+    <button onClick={onOpen} className="m-1 flex flex-col border border-black">
+      + Add a Book
+    </button>
   );
 }
 
