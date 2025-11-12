@@ -12,7 +12,7 @@
 - ✅ Create [basic app structure](./ComponentStructure.md) → set up initial files and folders
 - ✅ Build app skeleton → responsive layout (borders only)
 - ✅ Add column config → COLUMNS setup with keys & labels
-- [x]
+- ✅ Set up new AddBookComposer component → wired it up to ColumnBody
 - [x]
 - [x]
 - [x]

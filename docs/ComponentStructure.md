@@ -11,6 +11,7 @@
       - **ColumnHeader**
         - **StatusBadge** (Backlog / In Progress / Finished)
         - **AddBookButton**
+        - **AddBookComposer**
 
       - **ColumnBody** (Holds the list of books)
         - **BookList** (Wrapper for book cards)
