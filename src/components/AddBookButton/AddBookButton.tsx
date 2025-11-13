@@ -1,8 +1,16 @@
-type Props = { onOpen: () => void };
+interface AddBookButtonProps {
+  onOpen: () => void;
+}
 
-function AddBookButton({ onOpen }: Props) {
+function AddBookButton(props: AddBookButtonProps) {
+  const { onOpen } = props;
+
   return (
-    <button onClick={onOpen} className="m-1 flex flex-col border border-black">
+    <button
+      type="button"
+      onClick={onOpen}
+      className="m-1 flex flex-col border border-black"
+    >
       + Add a Book
     </button>
   );

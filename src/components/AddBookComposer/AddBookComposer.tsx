@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 
-type Props = {
+interface AddBookComposerProps {
   onAddManual: (title: string) => void;
   onClose: () => void;
-};
+}
 
-function AddBookComposer({ onAddManual, onClose }: Props) {
+function AddBookComposer(props: AddBookComposerProps) {
+  const { onAddManual, onClose } = props;
+
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,12 +48,14 @@ function AddBookComposer({ onAddManual, onClose }: Props) {
       </div>
       <div className="m-1 flex gap-1">
         <button
+          type="button"
           onClick={add}
           className="flex-1 border border-black p-1 text-center"
         >
           Add manually
         </button>
         <button
+          type="button"
           onClick={onClose}
           className="flex-1 border border-black p-1 text-center"
         >

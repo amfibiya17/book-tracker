@@ -4,12 +4,13 @@ import { StatusBadge } from "../StatusBadge";
 import { AddBookButton } from "../AddBookButton";
 import { AddBookComposer } from "../AddBookComposer";
 
-type Props = {
+interface ColumnHeaderProps {
   columnKey: ColumnKey;
   onAddManual: (title: string) => void;
-};
+}
 
-function ColumnHeader({ columnKey, onAddManual }: Props) {
+function ColumnHeader(props: ColumnHeaderProps) {
+  const { columnKey, onAddManual } = props;
   const [open, setOpen] = useState(false);
 
   return (
