@@ -17,6 +17,7 @@ interface ColumnProps {
   }) => void;
   onEditBook?: (book: Book) => void;
   onDeleteBook?: (book: Book) => void;
+  duplicateMessage?: string | null;
 }
 
 function Column(props: ColumnProps) {
@@ -27,10 +28,19 @@ function Column(props: ColumnProps) {
     onAddFromSearch,
     onEditBook,
     onDeleteBook,
+    duplicateMessage,
   } = props;
 
   return (
     <div className="flex flex-col">
+      <div className="h-7 mb-2 flex items-center justify-center">
+        {duplicateMessage && (
+          <div className="max-w-[90%] rounded-md border border-yellow-500 bg-yellow-100 px-2 py-1 text-center text-[10px]">
+            {duplicateMessage}
+          </div>
+        )}
+      </div>
+
       <ColumnHeader
         columnKey={columnKey}
         onAddManual={onAddManual}

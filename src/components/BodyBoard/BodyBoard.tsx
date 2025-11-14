@@ -16,6 +16,10 @@ function BodyBoard() {
   const [backlog, setBacklog] = useState<Book[]>(initialBoard.backlog);
   const [inProgress, setInProgress] = useState<Book[]>(initialBoard.inProgress);
   const [finished, setFinished] = useState<Book[]>(initialBoard.finished);
+  const [duplicateInfo, setDuplicateInfo] = useState<{
+    column: ColumnKey;
+    message: string;
+  } | null>(null);
 
   const setFor = (key: ColumnKey) =>
     key === "backlog"
@@ -54,7 +58,16 @@ function BodyBoard() {
     }
   ) => {
     if (isDuplicateGoogleBook(data.id)) {
-      // TODO: show a message later "Book already on board"
+      setDuplicateInfo({
+        column: key,
+        message: "That book is already on your board",
+      });
+      window.setTimeout(() => {
+        setDuplicateInfo((current) =>
+          current && current.column === key ? null : current
+        );
+      }, 300000);
+
       return;
     }
 
@@ -94,6 +107,9 @@ function BodyBoard() {
             <Column
               columnKey={key}
               books={booksFor(key)}
+              duplicateMessage={
+                duplicateInfo?.column === key ? duplicateInfo.message : null
+              }
               onAddManual={(title) => addManualBookTo(key, title)}
               onAddFromSearch={(data) => addBookFromSearch(key, data)}
               onEditBook={(book) => {
