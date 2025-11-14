@@ -66,7 +66,7 @@ function BodyBoard() {
         setDuplicateInfo((current) =>
           current && current.column === key ? null : current
         );
-      }, 300000);
+      }, 3000);
 
       return;
     }
