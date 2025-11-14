@@ -34,6 +34,14 @@ function BodyBoard() {
     setFor(key)((prev) => [book, ...prev]);
   };
 
+  const isDuplicateGoogleBook = (googleId: string) => {
+    const allBooks = [...backlog, ...inProgress, ...finished];
+
+    return allBooks.some(
+      (book) => book.source === "google" && book.sourceId === googleId
+    );
+  };
+
   const addBookFromSearch = (
     key: ColumnKey,
     data: {
@@ -45,6 +53,11 @@ function BodyBoard() {
       pageCount?: number;
     }
   ) => {
+    if (isDuplicateGoogleBook(data.id)) {
+      // TODO: show a message later "Book already on board"
+      return;
+    }
+
     const book: Book = {
       id: newId(),
       title: data.title,
@@ -56,6 +69,7 @@ function BodyBoard() {
       sourceId: data.id,
       createdAt: Date.now(),
     };
+
     setFor(key)((prev) => [book, ...prev]);
   };
 
