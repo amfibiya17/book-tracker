@@ -18,8 +18,9 @@
 - ✅ Set up Google Books API call → fetch basic book data for a query
 - ✅ Wire composer input to API → typing shows a live results list under the input (placeholder UI)
 - ✅ Allow selecting a result → clicking a result adds that book as a BookCard to the current column
-- 🔄 Prevent duplicates → avoid adding the same Google book twice across any column
-- [ ] Unify search card styles → make Google search results visually match BookCard size + layout
+- ✅ Prevent duplicates → avoid adding the same Google book twice across any column
+- 🔄 Show duplicate warning → display “Book already on board” when user selects an already-added Google result
+- 🔄 Unify search card styles → make Google search results visually match BookCard size + layout
 
 - [ ] Improve BookCard delete button → clearer icon + consistent styling
 - [ ] Limit long titles → apply 2-line clamp for consistent card height
@@ -30,6 +31,9 @@
 - [ ] Drag & drop (Phase 1) → reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) → move BookCards between columns (Backlog → In Progress → Finished)
 - [ ] Drag & drop persistence → updated board order saved to localStorage
+
+- [ ] Header functionality → display app title and global actions
+- [ ] Footer functionality → display helper text and secondary actions
 
 - [ ] Export/import board → save entire reading board as JSON, restore later
 - [ ] Clear board action → reset all columns with one confirmation click
