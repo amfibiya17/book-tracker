@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="border border-black p-4 text-center">Header</header>
+    <header className="mt-2 border border-black p-4 text-center rounded-md">Header</header>
   );
 }
 

@@ -3,14 +3,20 @@ import type { Book } from "../../types";
 
 interface ColumnBodyProps {
   books: Book[];
+  onEditBook?: (book: Book) => void;
+  onDeleteBook?: (book: Book) => void;
 }
 
 function ColumnBody(props: ColumnBodyProps) {
-  const { books } = props;
+  const { books, onEditBook, onDeleteBook } = props;
 
   return (
-    <div className="m-1 flex flex-col border border-black bg-gray-300">
-      <BookList books={books} />
+    <div className="flex flex-col">
+      <BookList
+        books={books}
+        onEditBook={onEditBook}
+        onDeleteBook={onDeleteBook}
+      />
     </div>
   );
 }

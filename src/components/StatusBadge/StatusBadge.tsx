@@ -6,7 +6,7 @@ function StatusBadge(props: StatusBadgeProps) {
   const { label } = props;
 
   return (
-    <div className="m-1 flex flex-col border border-black text-center">
+    <div className="mt-2 flex flex-col text-center">
       {label}
     </div>
   );

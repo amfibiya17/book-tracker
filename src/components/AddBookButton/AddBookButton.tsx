@@ -9,7 +9,7 @@ function AddBookButton(props: AddBookButtonProps) {
     <button
       type="button"
       onClick={onOpen}
-      className="m-1 flex flex-col border border-black"
+      className="m-2 flex flex-col"
     >
       + Add a Book
     </button>

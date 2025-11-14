@@ -3,19 +3,28 @@ import type { Book } from "../../types";
 
 interface BookListProps {
   books: Book[];
+  onEditBook?: (book: Book) => void;
+  onDeleteBook?: (book: Book) => void;
 }
 
 function BookList(props: BookListProps) {
-  const { books } = props;
+  const { books, onEditBook, onDeleteBook } = props;
 
   if (!books.length) {
-    return <div className="m-1 border border-black p-1">No books yet</div>;
+    return (
+      <div className="mt-2 p-1 text-center text-gray-400">No books yet...</div>
+    );
   }
 
   return (
-    <div className="m-1 flex flex-col border border-black">
+    <div className="flex flex-col">
       {books.map((book) => (
-        <BookCard key={book.id} book={book} />
+        <BookCard
+          key={book.id}
+          book={book}
+          onEdit={onEditBook}
+          onDelete={onDeleteBook}
+        />
       ))}
     </div>
   );

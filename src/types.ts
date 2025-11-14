@@ -6,4 +6,6 @@ export type Book = {
   source: "google" | "manual";
   sourceId?: string;
   createdAt: number;
+  publishedYear?: number;
+  pageCount?: number;
 };
