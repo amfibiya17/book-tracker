@@ -110,9 +110,27 @@ function AddBookComposer(props: AddBookComposerProps) {
         />
       </div>
 
-      {/* Results list */}
       {loading && <div className="m-2 p-1 text-sm">Searching…</div>}
 
+      {/* Actions row */}
+      <div className="m-2 flex gap-2">
+        <button
+          type="button"
+          onClick={add}
+          className="flex-1 border border-black p-1 text-center rounded-md"
+        >
+          Add manually
+        </button>
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex-1 border border-black p-1 text-center rounded-md"
+        >
+          Cancel
+        </button>
+      </div>
+
+      {/* Results list */}
       {!loading && results.length > 0 && (
         <div className="m-2 space-y-2">
           {results.map((r) => (
@@ -139,24 +157,6 @@ function AddBookComposer(props: AddBookComposerProps) {
           ))}
         </div>
       )}
-
-      {/* Actions row */}
-      <div className="m-2 flex gap-2">
-        <button
-          type="button"
-          onClick={add}
-          className="flex-1 border border-black p-1 text-center rounded-md"
-        >
-          Add manually
-        </button>
-        <button
-          type="button"
-          onClick={onClose}
-          className="flex-1 border border-black p-1 text-center rounded-md"
-        >
-          Cancel
-        </button>
-      </div>
     </div>
   );
 }
