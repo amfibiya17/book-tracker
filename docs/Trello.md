@@ -15,19 +15,29 @@
 - ✅ Set up new AddBookComposer component → wired it up to ColumnBody
 - ✅ Implement book state management → add manual books to columns + render in BookList
 - ✅ Persist board state → save columns to localStorage and restore on refresh (5 min expiry)
-- 🔄Set up Google Books API call → fetch basic book data (title, authors) for a query
-- 🔄Wire composer input to API → typing shows a live results list under the input (placeholder UI)
-- 🔄Allow selecting a result → clicking a result adds that book as a BookCard to the current column
-- [x]
-- [x]
-- [x]
-- [x]
-- [x]
-- [x]
+- ✅ Set up Google Books API call → fetch basic book data for a query
+- ✅ Wire composer input to API → typing shows a live results list under the input (placeholder UI)
+- ✅ Allow selecting a result → clicking a result adds that book as a BookCard to the current column
+- 🔄 Prevent duplicates → avoid adding the same Google book twice across any column
+- [ ] Unify search card styles → make Google search results visually match BookCard size + layout
 
-### Wishlist:
+- [ ] Improve BookCard delete button → clearer icon + consistent styling
+- [ ] Limit long titles → apply 2-line clamp for consistent card height
 
-- AI-powered book recommendations (AI Agent + option to auto-add to Backlog)
-- User authentication
-- Connect to backend database (persist reading board)
-- Allow user to update book titles (?)
+- [ ] Edit book title → allow updating title directly on the BookCard or in a small modal
+- [ ] OR: Build edit modal → open a modal to update all fields for manually-added books
+
+- [ ] Drag & drop (Phase 1) → reorder BookCards within the same column
+- [ ] Drag & drop (Phase 2) → move BookCards between columns (Backlog → In Progress → Finished)
+- [ ] Drag & drop persistence → updated board order saved to localStorage
+
+- [ ] Export/import board → save entire reading board as JSON, restore later
+- [ ] Clear board action → reset all columns with one confirmation click
+- [ ] Optional backend sync → connect to a real database and save the board state there
+
+- [ ] AI suggestions → generate recommendations - AI Agent?
+- [ ] Auto-add AI Agent picks → button to add recommended books directly to a Backlog
+
+- [ ] User authentication → allow sign up, login/logout, and store user profile
+
+- [ ] UI design → apply consistent styling
