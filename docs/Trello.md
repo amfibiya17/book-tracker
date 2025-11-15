@@ -21,14 +21,15 @@
 - ✅ Prevent duplicates → avoid adding the same Google book twice across any column
 - ✅ Show duplicate warning → display “Book already on board” when user selects an already-added Google result
 - ✅ Fix layout -> prevent board from shifting when search results add vertical scrollbar
-
-- 🔄 Unify search card styles → make Google search results visually match BookCard size + layout
-- 🔄 Improve search behavior → make Google Books results more reliable
+- ✅ Unify search card styles → make Google search results visually match BookCard size + layout
+- ✅ Refactor BookCard and AddBookComposer -> clean up components, reduce duplication, improve maintainability
+- ✅ Fix manual input issue -> enforce max input length of 40 characters
 
 - [ ] Drag & drop (Phase 1) → reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) → move BookCards between columns (Backlog → In Progress → Finished)
 - [ ] Drag & drop persistence → updated board order saved to localStorage
 
+- [ ] Improve search behavior → make Google Books results more reliable
 - [ ] Improve BookCard delete button → clearer icon + consistent styling
 - [ ] Limit long titles → apply 2-line clamp for consistent card height
 
