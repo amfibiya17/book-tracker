@@ -1,5 +1,22 @@
 import { useState, useEffect, useRef } from "react";
 import { searchBooks, type BookSearchResult } from "../../services/googleBooks";
+import ActionsRow from "./ActionsRow";
+import InputRow from "./InputRow";
+import type { Book } from "../../types";
+import { BookCard } from "../BookCard";
+
+function mapSearchResultToBook(result: BookSearchResult): Book {
+  return {
+    id: result.id,
+    title: result.title,
+    authors: result.authors,
+    thumbnail: result.thumbnail,
+    publishedYear: result.publishedYear,
+    pageCount: result.pageCount,
+    source: "google",
+    createdAt: Date.now(),
+  };
+}
 
 interface AddBookComposerProps {
   onAddManual: (title: string) => void;
@@ -95,64 +112,28 @@ function AddBookComposer(props: AddBookComposerProps) {
 
   return (
     <div ref={containerRef}>
-      {/* Input row */}
-      <div className="m-2 border border-black rounded-md">
-        <input
-          ref={inputRef}
-          placeholder="Type a book title…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Escape") onClose();
-            if (e.key === "Enter") add();
-          }}
-          className="w-full p-1 outline-none rounded-md"
-        />
-      </div>
+      <InputRow
+        query={query}
+        setQuery={setQuery}
+        inputRef={inputRef}
+        onClose={onClose}
+        onConfirm={add}
+      />
 
       {loading && <div className="m-2 p-1 text-sm">Searching…</div>}
 
-      {/* Actions row */}
-      <div className="m-2 flex gap-2">
-        <button
-          type="button"
-          onClick={add}
-          className="flex-1 border border-black p-1 text-center rounded-md"
-        >
-          Add manually
-        </button>
-        <button
-          type="button"
-          onClick={onClose}
-          className="flex-1 border border-black p-1 text-center rounded-md"
-        >
-          Cancel
-        </button>
-      </div>
+      <ActionsRow onAdd={add} onCancel={onClose} />
 
-      {/* Results list */}
       {!loading && results.length > 0 && (
-        <div className="m-2 space-y-2">
+        <div className="m-2">
           {results.map((r) => (
             <button
               key={r.id}
               type="button"
               onClick={() => handleSelectResult(r)}
-              className="flex w-full items-start gap-2 rounded-md border border-black bg-gray-100 p-2 text-left"
+              className="w-full text-left"
             >
-              {r.thumbnail && (
-                <img
-                  src={r.thumbnail}
-                  alt={r.title}
-                  className="h-16 w-12 flex-shrink-0 border border-black object-cover"
-                />
-              )}
-              <div className="flex-1">
-                <div className="text-xs font-semibold">{r.title}</div>
-                {r.authors.length > 0 && (
-                  <div className="text-[10px]">{r.authors.join(", ")}</div>
-                )}
-              </div>
+              <BookCard book={mapSearchResultToBook(r)} />
             </button>
           ))}
         </div>
