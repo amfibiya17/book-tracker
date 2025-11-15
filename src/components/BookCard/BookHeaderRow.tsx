@@ -16,11 +16,11 @@ function BookHeaderRow({ book }: BookHeaderRowProps) {
     return authors.slice(0, maxAuthors).join(", ") + "…";
   };
 
-  const shortenedTitle = truncateWords(book.title, 10);
+  const shortenedTitle = truncateWords(book.title, 7);
 
   const shortenedAuthors =
     book.authors && book.authors.length > 0
-      ? getFirstAuthors(book.authors, 2)
+      ? truncateWords(getFirstAuthors(book.authors, 2), 10)
       : "";
 
   return (
@@ -41,9 +41,11 @@ function BookHeaderRow({ book }: BookHeaderRowProps) {
       </div>
 
       <div className="flex flex-1 flex-col">
-        <div className="text-[14px] font-semibold">{shortenedTitle}</div>
+        <div className="text-[14px] font-semibold break-all">
+          {shortenedTitle}
+        </div>
         {shortenedAuthors && (
-          <div className="text-[12px]">{shortenedAuthors}</div>
+          <div className="text-[12px] break-all">{shortenedAuthors}</div>
         )}
       </div>
     </div>

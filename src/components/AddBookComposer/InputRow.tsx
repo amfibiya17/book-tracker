@@ -26,6 +26,7 @@ function InputRow({
           if (e.key === "Escape") onClose();
           if (e.key === "Enter") onConfirm();
         }}
+        maxLength={40}
         className="w-full p-1 outline-none rounded-md"
       />
     </div>
