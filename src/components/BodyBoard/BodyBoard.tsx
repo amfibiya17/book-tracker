@@ -21,6 +21,7 @@ function BodyBoard() {
     message: string;
   } | null>(null);
 
+  // helpers for columns
   const setFor = (key: ColumnKey) =>
     key === "backlog"
       ? setBacklog
@@ -28,22 +29,65 @@ function BodyBoard() {
         ? setInProgress
         : setFinished;
 
-  const addManualBookTo = (key: ColumnKey, title: string) => {
-    const book: Book = {
-      id: newId(),
-      title,
-      source: "manual",
-      createdAt: Date.now(),
-    };
+  const booksFor = (key: ColumnKey) =>
+    key === "backlog" ? backlog : key === "inProgress" ? inProgress : finished;
+
+  const getAllBooks = () => [...backlog, ...inProgress, ...finished];
+
+  // generic helpers
+  const normaliseTitle = (title: string) => title.trim().toLowerCase();
+
+  const showDuplicateMessage = (key: ColumnKey) => {
+    setDuplicateInfo({
+      column: key,
+      message: "That book is already on your board",
+    });
+
+    window.setTimeout(() => {
+      setDuplicateInfo((current) =>
+        current && current.column === key ? null : current
+      );
+    }, 3000);
+  };
+
+  const addBookToColumn = (key: ColumnKey, book: Book) => {
     setFor(key)((prev) => [book, ...prev]);
   };
 
-  const isDuplicateGoogleBook = (googleId: string) => {
-    const allBooks = [...backlog, ...inProgress, ...finished];
+  // duplicate checks
+  const isDuplicateManualBook = (title: string) => {
+    const normalised = normaliseTitle(title);
 
-    return allBooks.some(
+    return getAllBooks().some(
+      (book) =>
+        book.source === "manual" && normaliseTitle(book.title) === normalised
+    );
+  };
+
+  const isDuplicateGoogleBook = (googleId: string) => {
+    return getAllBooks().some(
       (book) => book.source === "google" && book.sourceId === googleId
     );
+  };
+
+  // add/remove actions
+  const addManualBookTo = (key: ColumnKey, title: string) => {
+    const trimmedTitle = title.trim();
+    if (!trimmedTitle) return;
+
+    if (isDuplicateManualBook(trimmedTitle)) {
+      showDuplicateMessage(key);
+      return;
+    }
+
+    const book: Book = {
+      id: newId(),
+      title: trimmedTitle,
+      source: "manual",
+      createdAt: Date.now(),
+    };
+
+    addBookToColumn(key, book);
   };
 
   const addBookFromSearch = (
@@ -58,16 +102,7 @@ function BodyBoard() {
     }
   ) => {
     if (isDuplicateGoogleBook(data.id)) {
-      setDuplicateInfo({
-        column: key,
-        message: "That book is already on your board",
-      });
-      window.setTimeout(() => {
-        setDuplicateInfo((current) =>
-          current && current.column === key ? null : current
-        );
-      }, 3000);
-
+      showDuplicateMessage(key);
       return;
     }
 
@@ -83,17 +118,14 @@ function BodyBoard() {
       createdAt: Date.now(),
     };
 
-    setFor(key)((prev) => [book, ...prev]);
+    addBookToColumn(key, book);
   };
 
   const removeBookFrom = (key: ColumnKey, id: string) => {
     setFor(key)((prev) => prev.filter((book) => book.id !== id));
   };
 
-  const booksFor = (key: ColumnKey) =>
-    key === "backlog" ? backlog : key === "inProgress" ? inProgress : finished;
-
-  // whenever columns change → save to localStorage
+  // whenever columns change -> save to localStorage
   useEffect(() => {
     const state: BoardState = { backlog, inProgress, finished };
     saveBoardState(state);
