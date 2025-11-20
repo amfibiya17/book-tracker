@@ -24,7 +24,7 @@ export function loadBoardState(): BoardState {
 
     const parsed = JSON.parse(raw) as { savedAt: number; state: BoardState };
 
-    // too old → ignore and start fresh
+    // too old -> ignore and start fresh
     if (Date.now() - parsed.savedAt > FIVE_MIN_MS) {
       return emptyBoardState;
     }
