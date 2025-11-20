@@ -25,7 +25,7 @@
 - ✅ Refactor BookCard and AddBookComposer -> clean up components, reduce duplication, improve maintainability
 - ✅ Fix manual input issue -> enforce max input length of 40 characters
 - ✅ Improve title/author rendering -> add word truncation + line clamp
-- 🔄 Fix manual adding books -> prevent adding the same title manually multiple times
+- ✅ Fix manual adding books -> prevent adding the same title manually multiple times
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
