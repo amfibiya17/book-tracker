@@ -26,6 +26,8 @@
 - ✅ Fix manual input issue -> enforce max input length of 40 characters
 - ✅ Improve title/author rendering -> add word truncation + line clamp
 - ✅ Fix manual adding books -> prevent adding the same title manually multiple times
+- ✅ Migration -> Tailwind CSS v4 + daisyUI + Typography plugin
+- [ ] UI design -> apply basic styling with daisyUI
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
