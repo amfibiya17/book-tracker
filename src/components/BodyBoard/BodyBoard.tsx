@@ -133,24 +133,26 @@ function BodyBoard() {
 
   return (
     <main className="mt-4 mb-4 flex-1">
-      <div className="flex flex-col gap-8 md:flex-row">
-        {COLUMNS.map(({ key }) => (
-          <div key={key} className="flex-1">
-            <Column
-              columnKey={key}
-              books={booksFor(key)}
-              duplicateMessage={
-                duplicateInfo?.column === key ? duplicateInfo.message : null
-              }
-              onAddManual={(title) => addManualBookTo(key, title)}
-              onAddFromSearch={(data) => addBookFromSearch(key, data)}
-              onEditBook={(book) => {
-                console.log("Edit book", book.title, "in column", key);
-              }}
-              onDeleteBook={(book) => removeBookFrom(key, book.id)}
-            />
-          </div>
-        ))}
+      <div className="mx-auto w-full max-w-360 px-8">
+        <div className="flex flex-col gap-8 md:flex-row">
+          {COLUMNS.map(({ key }) => (
+            <div key={key} className="flex-1 min-w-0">
+              <Column
+                columnKey={key}
+                books={booksFor(key)}
+                duplicateMessage={
+                  duplicateInfo?.column === key ? duplicateInfo.message : null
+                }
+                onAddManual={(title) => addManualBookTo(key, title)}
+                onAddFromSearch={(data) => addBookFromSearch(key, data)}
+                onEditBook={(book) => {
+                  console.log("Edit book", book.title, "in column", key);
+                }}
+                onDeleteBook={(book) => removeBookFrom(key, book.id)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
