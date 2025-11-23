@@ -12,15 +12,21 @@ function BookCard(props: BookCardProps) {
   const { book, onEdit, onDelete } = props;
 
   return (
-    <div className="mt-4 flex h-28 flex-col rounded-md border border-black p-1">
-      <BookHeaderRow book={book} />
-
-      <BookMetaRow
-        year={book.publishedYear}
-        pages={book.pageCount}
-        onEdit={onEdit ? () => onEdit(book) : undefined}
-        onDelete={onDelete ? () => onDelete(book) : undefined}
-      />
+    <div
+      className="mt-4 card bg-base-100 border border-base-300 shadow-sm
+                 transition duration-150 ease-out
+                 hover:border-primary hover:shadow-md hover:-translate-y-0.5
+                 text-sm md:text-base min-h-26"
+    >
+      <div className="card-body p-2 gap-1 flex flex-col justify-between">
+        <BookHeaderRow book={book} />
+        <BookMetaRow
+          year={book.publishedYear}
+          pages={book.pageCount}
+          onEdit={onEdit ? () => onEdit(book) : undefined}
+          onDelete={onDelete ? () => onDelete(book) : undefined}
+        />
+      </div>
     </div>
   );
 }

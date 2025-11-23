@@ -24,7 +24,7 @@ function BookHeaderRow({ book }: BookHeaderRowProps) {
 
   return (
     <div className="flex flex-1 gap-2">
-      <div className="m-1 h-16 w-12 flex-shrink-0 border border-gray-300 flex items-center justify-center">
+      <div className="flex h-24 w-16 shrink-0 items-center justify-center border border-base-300 bg-base-200">
         {book.thumbnail ? (
           <img
             src={book.thumbnail}
@@ -32,18 +32,20 @@ function BookHeaderRow({ book }: BookHeaderRowProps) {
             className="h-full w-full object-cover"
           />
         ) : (
-          <span className="text-[10px] text-center text-gray-400">
+          <span className="text-[10px] text-center text-base-content/50">
             No cover
           </span>
         )}
       </div>
 
       <div className="flex flex-1 flex-col overflow-hidden">
-        <div className="text-[14px] font-semibold clamp-2">
+        <div className="clamp-2 wrap-break-word text-base font-semibold text-base-content">
           {shortenedTitle}
         </div>
         {shortenedAuthors && (
-          <div className="text-[12px] clamp-1">{shortenedAuthors}</div>
+          <div className="clamp-1 wrap-break-word text-sm text-base-content/70">
+            {shortenedAuthors}
+          </div>
         )}
       </div>
     </div>

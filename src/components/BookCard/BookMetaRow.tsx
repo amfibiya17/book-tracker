@@ -9,29 +9,33 @@ function BookMetaRow({ year, pages, onEdit, onDelete }: BookMetaRowProps) {
   const hasActions = onEdit || onDelete;
 
   return (
-    <div className="mt-1 ml-1 flex items-center justify-between text-[12px]">
+    <div className="flex items-center justify-between text-base-content/80">
       <div className="flex gap-2">
-        <div className="w-16">Year: {year ?? "-"}</div>
-        <div>Pages: {pages ?? "-"}</div>
+        <span className="badge badge-neutral badge-sm badge-grow h-5.5">
+          Year: {year ?? "0000"}
+        </span>
+        <span className="badge badge-neutral badge-sm badge-grow h-5.5">
+          Pages: {pages ?? "000"}
+        </span>
       </div>
 
       {hasActions && (
-        <div className="flex">
+        <div className="flex gap-1 ml-1">
           {onEdit && (
             <button
               type="button"
               aria-label="Edit book"
-              className="h-6 w-6 text-xs leading-none rotate-45"
+              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-info/10 hover:text-info"
               onClick={onEdit}
             >
-              ✕
+              ✎
             </button>
           )}
           {onDelete && (
             <button
               type="button"
               aria-label="Delete book"
-              className="h-6 w-6 text-xs leading-none"
+              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-error/10 hover:text-error"
               onClick={onDelete}
             >
               ✕

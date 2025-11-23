@@ -29,3 +29,9 @@ html {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.badge-grow {
+  height: auto;
+  min-height: 22px;
+  align-items: flex-start;
+}

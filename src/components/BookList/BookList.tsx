@@ -12,7 +12,9 @@ function BookList(props: BookListProps) {
 
   if (!books.length) {
     return (
-      <div className="mt-2 p-1 text-center text-gray-400">No books yet...</div>
+      <div className="mt-2 p-2 text-center text-base-content/50">
+        No books yet ...
+      </div>
     );
   }
 
