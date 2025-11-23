@@ -5,3 +5,4 @@ Think of it as a lightweight Trello board, but just for your books.
 
 ## 🚧 Status
 Build in progress... 🔄
+[Visit the preview](https://book-tracker-readboard.vercel.app/)
