@@ -27,6 +27,8 @@
 - ✅ Improve title/author rendering -> add word truncation + line clamp
 - ✅ Fix manual adding books -> prevent adding the same title manually multiple times
 - ✅ Migration -> Tailwind CSS v4 + daisyUI + Typography plugin
+- ✅ Footer functionality -> display GithubIcon and LinkedInIcon
+- [ ] Header functionality -> display app title and global actions
 - [ ] UI design -> apply basic styling with daisyUI
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
@@ -39,9 +41,6 @@
 
 - [ ] Edit book title -> allow updating title directly on the BookCard or in a small modal
 - [ ] OR: Build edit modal -> open a modal to update all fields for manually-added books
-
-- [ ] Header functionality -> display app title and global actions
-- [ ] Footer functionality -> display helper text and secondary actions
 
 - [ ] Export/import board -> save entire reading board as JSON, restore later
 - [ ] Clear board action -> reset all columns with one confirmation click
