@@ -25,7 +25,7 @@ function BookMetaRow({ year, pages, onEdit, onDelete }: BookMetaRowProps) {
             <button
               type="button"
               aria-label="Edit book"
-              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-info/10 hover:text-info"
+              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-primary/10 hover:text-primary"
               onClick={onEdit}
             >
               ✎

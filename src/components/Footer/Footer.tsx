@@ -3,7 +3,7 @@ import GithubIcon from "./GithubIcon";
 
 function Footer() {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-6 mt-8">
+    <footer className="footer footer-center bg-neutral text-base-100 p-6 mt-8">
       <nav>
         <div className="flex gap-4">
           <a
@@ -12,7 +12,7 @@ function Footer() {
             rel="noreferrer"
             aria-label="Open LinkedIn profile"
             className="inline-flex h-10 w-10 items-center justify-center
-                       text-base-content/60 hover:text-primary
+                       text-base-100 hover:text-primary
                        transition-colors"
           >
             <LinkedInIcon className="h-8 w-8 fill-current" />
@@ -24,7 +24,7 @@ function Footer() {
             rel="noreferrer"
             aria-label="Open GitHub profile"
             className="inline-flex h-10 w-10 items-center justify-center
-                       text-base-content/60 hover:text-primary
+                       text-base-100 hover:text-primary
                        transition-colors"
           >
             <GithubIcon className="h-8 w-8 fill-current" />
