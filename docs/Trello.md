@@ -28,12 +28,14 @@
 - ✅ Fix manual adding books -> prevent adding the same title manually multiple times
 - ✅ Migration -> Tailwind CSS v4 + daisyUI + Typography plugin
 - ✅ Footer functionality -> display GithubIcon and LinkedInIcon
+- ✅ Header functionality -> display app title and global actions
 - 🔄 UI design -> apply basic styling with daisyUI
-- 🔄 Header functionality -> display app title and global actions
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
 - [ ] Drag & drop persistence -> updated board order saved to localStorage
+
+- [ ] Header functionality -> add proper links (option 1 - print list of books?, option 2 - logout?)
 
 - [ ] Improve search behavior -> make Google Books results more reliable
 - [ ] Improve BookCard delete button -> clearer icon + consistent styling
