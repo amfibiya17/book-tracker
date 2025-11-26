@@ -133,7 +133,7 @@ function BodyBoard() {
 
   return (
     <main className="mt-4 mb-4 flex-1">
-      <div className="mx-auto w-full max-w-360 px-8">
+      <div className="mx-auto w-full max-w-7xl px-8">
         <div className="flex flex-col gap-8 md:flex-row">
           {COLUMNS.map(({ key }) => (
             <div key={key} className="flex-1 min-w-0">

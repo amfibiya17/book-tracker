@@ -13,7 +13,7 @@ function Footer() {
             aria-label="Open LinkedIn profile"
             className="inline-flex h-10 w-10 items-center justify-center
                        text-base-100 hover:text-primary
-                       transition-colors"
+                       transition-colors duration-300"
           >
             <LinkedInIcon className="h-8 w-8 fill-current" />
           </a>
@@ -25,7 +25,7 @@ function Footer() {
             aria-label="Open GitHub profile"
             className="inline-flex h-10 w-10 items-center justify-center
                        text-base-100 hover:text-primary
-                       transition-colors"
+                       transition-colors duration-300"
           >
             <GithubIcon className="h-8 w-8 fill-current" />
           </a>
