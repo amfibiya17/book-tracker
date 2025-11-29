@@ -7,6 +7,7 @@ import {
   saveBoardState,
   type BoardState,
 } from "../../state/boardStorage";
+import PrintableBoard from "./PrintableBoard";
 
 const newId = () => crypto.randomUUID();
 
@@ -133,7 +134,7 @@ function BodyBoard() {
 
   return (
     <main className="mt-4 mb-4 flex-1">
-      <div className="mx-auto w-full max-w-7xl px-8">
+      <div className="mx-auto w-full max-w-7xl px-8 print:hidden">
         <div className="flex flex-col gap-8 md:flex-row">
           {COLUMNS.map(({ key }) => (
             <div key={key} className="flex-1 min-w-0">
@@ -153,6 +154,15 @@ function BodyBoard() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Print-friendly layout – print only */}
+      <div className="hidden print:block mx-auto w-full max-w-5xl px-8">
+        <PrintableBoard
+          backlog={backlog}
+          inProgress={inProgress}
+          finished={finished}
+        />
       </div>
     </main>
   );
