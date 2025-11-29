@@ -2,9 +2,10 @@ import HeaderIcon from "./HeaderIcon";
 
 function Header() {
   return (
-    <header className="bg-neutral text-base-100">
-      <div
-        className="
+    <>
+      <header className="bg-neutral text-base-100 print:hidden">
+        <div
+          className="
           mx-auto flex w-full max-w-7xl
           flex-wrap items-center justify-between gap-3
           px-8 py-6

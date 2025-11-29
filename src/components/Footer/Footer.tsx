@@ -3,7 +3,7 @@ import GithubIcon from "./GithubIcon";
 
 function Footer() {
   return (
-    <footer className="footer footer-center bg-neutral text-base-100 p-6 mt-8">
+    <footer className="footer footer-center bg-neutral text-base-100 p-6 mt-8 print:hidden">
       <nav>
         <div className="flex gap-4">
           <a
