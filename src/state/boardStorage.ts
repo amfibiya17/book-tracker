@@ -50,3 +50,7 @@ export function saveBoardState(state: BoardState): void {
     // ignore write errors
   }
 }
+
+export function resetBoardState(): void {
+  saveBoardState(emptyBoardState);
+}
