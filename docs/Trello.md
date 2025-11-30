@@ -33,15 +33,15 @@
 - ✅ Export board -> save board in consistent format
 - ✅ Print board -> print board in consistent format
 - ✅ Clear board action -> reset all columns with one confirmation click + confirmation on modal window
-- 🔄 UI design -> apply basic styling with daisyUI to the whole App
+- ✅ UI design -> apply basic styling with daisyUI to the whole App
+- 🔄 Improve BookCard delete button -> clearer icon + consistent styling
+- 🔄 Limit long titles -> apply 2-line clamp for consistent card height (check existed implementation for improvements)
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
 - [ ] Drag & drop persistence -> updated board order saved to localStorage
 
 - [ ] Improve search behavior -> make Google Books results more reliable
-- [ ] Improve BookCard delete button -> clearer icon + consistent styling
-- [ ] Limit long titles -> apply 2-line clamp for consistent card height (check existed implementation for improvements)
 
 - [ ] Edit book title -> allow updating title directly on the BookCard or in a small modal
 - [ ] OR: Build edit modal -> open a modal to update all fields for manually-added books
@@ -53,4 +53,4 @@
 
 - [ ] User authentication -> allow sign up, login/logout, and store user profile
 
-- [ ] UI design -> apply consistent styling
+- [ ] UI design -> apply consistent styling (final clean up)
