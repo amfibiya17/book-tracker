@@ -120,9 +120,9 @@ function AddBookComposer(props: AddBookComposerProps) {
         onConfirm={add}
       />
 
-      {loading && <div className="m-2 p-1 text-sm">Searching…</div>}
-
       <ActionsRow onAdd={add} onCancel={onClose} />
+
+      {loading && <div className="m-2 p-1 text-sm">Searching…</div>}
 
       {!loading && results.length > 0 && (
         <div className="m-2">
