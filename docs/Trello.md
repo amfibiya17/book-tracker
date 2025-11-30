@@ -28,24 +28,24 @@
 - ✅ Fix manual adding books -> prevent adding the same title manually multiple times
 - ✅ Migration -> Tailwind CSS v4 + daisyUI + Typography plugin
 - ✅ Footer functionality -> display GithubIcon and LinkedInIcon
-- ✅ Header functionality -> display app title and global actions
-- 🔄 UI design -> apply basic styling with daisyUI
+- ✅ Header functionality 1 -> display app title and global actions
+- ✅ Header functionality 2 -> create hamburger dropdown with actions
+- ✅ Export board -> save board in consistent format
+- ✅ Print board -> print board in consistent format
+- ✅ Clear board action -> reset all columns with one confirmation click + confirmation on modal window
+- 🔄 UI design -> apply basic styling with daisyUI to the whole App
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
 - [ ] Drag & drop persistence -> updated board order saved to localStorage
 
-- [ ] Header functionality -> add proper links (option 1 - print list of books?, option 2 - logout?)
-
 - [ ] Improve search behavior -> make Google Books results more reliable
 - [ ] Improve BookCard delete button -> clearer icon + consistent styling
-- [ ] Limit long titles -> apply 2-line clamp for consistent card height
+- [ ] Limit long titles -> apply 2-line clamp for consistent card height (check existed implementation for improvements)
 
 - [ ] Edit book title -> allow updating title directly on the BookCard or in a small modal
 - [ ] OR: Build edit modal -> open a modal to update all fields for manually-added books
 
-- [ ] Export/import board -> save entire reading board as JSON, restore later
-- [ ] Clear board action -> reset all columns with one confirmation click
 - [ ] Optional backend sync -> connect to a real database and save the board state there
 
 - [ ] AI suggestions -> generate recommendations - AI Agent?
