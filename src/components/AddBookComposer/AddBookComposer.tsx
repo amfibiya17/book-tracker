@@ -122,7 +122,9 @@ function AddBookComposer(props: AddBookComposerProps) {
 
       <ActionsRow onAdd={add} onCancel={onClose} />
 
-      {loading && <div className="m-2 p-1 text-sm">Searching…</div>}
+      {loading && (
+        <div className="px-3 pr-2 text-sm text-base-content/70">Searching…</div>
+      )}
 
       {!loading && results.length > 0 && (
         <div className="m-2">

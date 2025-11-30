@@ -16,7 +16,7 @@ function InputRow({
   onConfirm,
 }: InputRowProps) {
   return (
-    <div className="m-2 border border-black rounded-md">
+    <div className="m-2">
       <input
         ref={inputRef}
         placeholder="Type a book title…"
@@ -27,7 +27,7 @@ function InputRow({
           if (e.key === "Enter") onConfirm();
         }}
         maxLength={40}
-        className="w-full p-1 outline-none rounded-md"
+        className="input input-md input-bordered w-full"
       />
     </div>
   );

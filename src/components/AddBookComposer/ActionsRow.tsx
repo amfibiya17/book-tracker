@@ -9,14 +9,14 @@ function ActionsRow({ onAdd, onCancel }: ActionsRowProps) {
       <button
         type="button"
         onClick={onAdd}
-        className="flex-1 border border-black p-1 text-center rounded-md"
+        className="btn btn-md btn-secondary flex-1"
       >
         Add manually
       </button>
       <button
         type="button"
         onClick={onCancel}
-        className="flex-1 border border-black p-1 text-center rounded-md"
+        className="btn btn-md btn-accent flex-1"
       >
         Cancel
       </button>

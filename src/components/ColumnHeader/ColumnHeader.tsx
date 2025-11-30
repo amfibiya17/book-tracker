@@ -22,7 +22,7 @@ function ColumnHeader(props: ColumnHeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col bg-gray-300 rounded-md">
+    <div className="flex flex-col gap-2 rounded-xl border border-base-300 bg-base-300 p-3 shadow-sm">
       <StatusBadge label={labelFor(columnKey)} />
       {open ? (
         <AddBookComposer

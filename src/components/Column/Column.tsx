@@ -35,8 +35,8 @@ function Column(props: ColumnProps) {
     <div className="flex flex-col">
       <div className="h-7 mb-2 flex items-center justify-center">
         {duplicateMessage && (
-          <div className="max-w-[90%] rounded-md border border-yellow-500 bg-yellow-100 px-2 py-1 text-center text-[10px]">
-            {duplicateMessage}
+          <div className="alert alert-warning py-1 px-2 text-[10px] leading-snug max-w-[90%] flex justify-center">
+            <span>{duplicateMessage}</span>
           </div>
         )}
       </div>
@@ -46,6 +46,7 @@ function Column(props: ColumnProps) {
         onAddManual={onAddManual}
         onAddFromSearch={onAddFromSearch}
       />
+
       <ColumnBody
         books={books}
         onEditBook={onEditBook}
