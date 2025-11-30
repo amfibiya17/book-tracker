@@ -47,12 +47,12 @@ function AddBookComposer(props: AddBookComposerProps) {
     onClose();
   };
 
-  // focus input when composer opens
+  // Focus input when composer opens
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  // close on outside click
+  // Close on outside click
   useEffect(() => {
     const handler = (e: MouseEvent | TouchEvent | PointerEvent) => {
       const el = containerRef.current;
@@ -62,11 +62,11 @@ function AddBookComposer(props: AddBookComposerProps) {
     return () => document.removeEventListener("pointerdown", handler);
   }, [onClose]);
 
-  // debounced search as user types
+  // Debounced search as user types
   useEffect(() => {
     const trimmed = query.trim();
 
-    // if empty, clear results and skip fetch
+    // If empty, clear results and skip fetch
     if (!trimmed) {
       setResults([]);
       setLoading(false);
@@ -81,7 +81,7 @@ function AddBookComposer(props: AddBookComposerProps) {
         const data = await searchBooks(trimmed, controller.signal);
         setResults(data);
       } catch {
-        // ignore abort error
+        // Ignore abort error
       } finally {
         setLoading(false);
       }

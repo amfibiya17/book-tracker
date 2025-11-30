@@ -22,7 +22,7 @@ function BodyBoard() {
     message: string;
   } | null>(null);
 
-  // helpers for columns
+  // Helpers for columns
   const setFor = (key: ColumnKey) =>
     key === "backlog"
       ? setBacklog
@@ -35,7 +35,7 @@ function BodyBoard() {
 
   const getAllBooks = () => [...backlog, ...inProgress, ...finished];
 
-  // generic helpers
+  // Generic helpers
   const normaliseTitle = (title: string) => title.trim().toLowerCase();
 
   const showDuplicateMessage = (key: ColumnKey) => {
@@ -55,7 +55,7 @@ function BodyBoard() {
     setFor(key)((prev) => [book, ...prev]);
   };
 
-  // duplicate checks
+  // Duplicate checks
   const isDuplicateManualBook = (title: string) => {
     const normalised = normaliseTitle(title);
 
@@ -71,7 +71,7 @@ function BodyBoard() {
     );
   };
 
-  // add/remove actions
+  // Add/remove actions
   const addManualBookTo = (key: ColumnKey, title: string) => {
     const trimmedTitle = title.trim();
     if (!trimmedTitle) return;
@@ -126,7 +126,7 @@ function BodyBoard() {
     setFor(key)((prev) => prev.filter((book) => book.id !== id));
   };
 
-  // whenever columns change -> save to localStorage
+  // Whenever columns change -> save to localStorage
   useEffect(() => {
     const state: BoardState = { backlog, inProgress, finished };
     saveBoardState(state);

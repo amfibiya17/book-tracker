@@ -24,14 +24,14 @@ export function loadBoardState(): BoardState {
 
     const parsed = JSON.parse(raw) as { savedAt: number; state: BoardState };
 
-    // too old -> ignore and start fresh
+    // Too old -> ignore and start fresh
     if (Date.now() - parsed.savedAt > FIVE_MIN_MS) {
       return emptyBoardState;
     }
 
     return parsed.state ?? emptyBoardState;
   } catch {
-    // if something goes wrong just start empty
+    // If something goes wrong just start empty
     return emptyBoardState;
   }
 }
@@ -47,7 +47,7 @@ export function saveBoardState(state: BoardState): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
   } catch {
-    // ignore write errors
+    // Ignore write errors
   }
 }
 
