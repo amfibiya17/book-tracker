@@ -34,9 +34,8 @@
 - ✅ Print board -> print board in consistent format
 - ✅ Clear board action -> reset all columns with one confirmation click + confirmation on modal window
 - ✅ UI design -> apply basic styling with daisyUI to the whole App
-- 🔄 Icons edit and close -> do properly (SVGs?) - proper icons for edit and remove in BookCard
-- 🔄 Cursor hand on the Book Card - for drag and drop
-- 🔄 Add book on enter key
+- ✅ Cursor hand on the Book Card -> for future drag and drop
+- ✅ Icons edit and remove -> proper icons for edit and remove in BookCard
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
