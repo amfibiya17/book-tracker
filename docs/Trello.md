@@ -36,6 +36,7 @@
 - ✅ UI design -> apply basic styling with daisyUI to the whole App
 - ✅ Cursor hand on the Book Card -> for future drag and drop
 - ✅ Icons edit and remove -> proper icons for edit and remove in BookCard
+- ✅ WorkInProgressModal -> add modal for edit button in BookCard
 
 - [ ] Drag & drop (Phase 1) -> reorder BookCards within the same column
 - [ ] Drag & drop (Phase 2) -> move BookCards between columns (Backlog -> In Progress -> Finished)
