@@ -1,3 +1,5 @@
+import EditIcon from "./EditIcon";
+import DeleteIcon from "./DeleteIcon";
 interface BookMetaRowProps {
   year?: number;
   pages?: number;
@@ -25,20 +27,20 @@ function BookMetaRow({ year, pages, onEdit, onDelete }: BookMetaRowProps) {
             <button
               type="button"
               aria-label="Edit book"
-              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-primary/10 hover:text-primary"
+              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 bg-transparent hover:bg-transparent border-none hover:border-none shadow-none hover:shadow-none hover:text-primary"
               onClick={onEdit}
             >
-              ✎
+              <EditIcon />
             </button>
           )}
           {onDelete && (
             <button
               type="button"
               aria-label="Delete book"
-              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 hover:bg-error/10 hover:text-error"
+              className="btn btn-ghost btn-lg min-h-0 h-6 px-2 bg-transparent hover:bg-transparent border-none hover:border-none shadow-none hover:shadow-none hover:text-error"
               onClick={onDelete}
             >
-              ✕
+              <DeleteIcon />
             </button>
           )}
         </div>
