@@ -19,7 +19,6 @@ function BookCard(props: BookCardProps) {
     if (onEdit) {
       onEdit(book);
     }
-
     setIsWorkInProgressOpen(true);
   };
 
@@ -40,7 +39,7 @@ function BookCard(props: BookCardProps) {
           <BookMetaRow
             year={book.publishedYear}
             pages={book.pageCount}
-            onEdit={handleEditClick}
+            onEdit={onEdit ? handleEditClick : undefined}
             onDelete={onDelete ? () => onDelete(book) : undefined}
           />
         </div>
